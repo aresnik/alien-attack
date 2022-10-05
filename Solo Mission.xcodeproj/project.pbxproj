@@ -22,7 +22,7 @@
 		46338BD728CCC04200188B7B /* Solo MissionTests in Resources */ = {isa = PBXBuildFile; fileRef = 46338BD628CCC04200188B7B /* Solo MissionTests */; };
 		46338BD928CCC05600188B7B /* Solo MissionUITests in Resources */ = {isa = PBXBuildFile; fileRef = 46338BD828CCC05600188B7B /* Solo MissionUITests */; };
 		4656B13128EBBE390061CF3C /* GamePausedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656B13028EBBE390061CF3C /* GamePausedScene.swift */; };
-		46A9E3A228E873DB0071B71C /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46A9E3A128E873DB0071B71C /* Starfield.sks */; };
+		46A75FEF28EDD8B6008D5944 /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46A75FEE28EDD8B6008D5944 /* Starfield.sks */; };
 		46B11BAD28CB99AB00EAC8B9 /* THEBOLDFONT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46B11BAC28CB99AB00EAC8B9 /* THEBOLDFONT.ttf */; };
 		46DE7E0E28D694F8001BAED9 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46DE7E0D28D694F8001BAED9 /* Explosion.sks */; };
 		46ED549728CD16A800527613 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ED549628CD16A800527613 /* MainMenuScene.swift */; };
@@ -64,7 +64,7 @@
 		46338BD628CCC04200188B7B /* Solo MissionTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Solo MissionTests"; sourceTree = "<group>"; };
 		46338BD828CCC05600188B7B /* Solo MissionUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Solo MissionUITests"; sourceTree = "<group>"; };
 		4656B13028EBBE390061CF3C /* GamePausedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePausedScene.swift; sourceTree = "<group>"; };
-		46A9E3A128E873DB0071B71C /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Starfield.sks; path = "../../../SpaceGameReloaded-master/SpacegameReloaded/Starfield.sks"; sourceTree = "<group>"; };
+		46A75FEE28EDD8B6008D5944 /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Starfield.sks; sourceTree = "<group>"; };
 		46B11BAC28CB99AB00EAC8B9 /* THEBOLDFONT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = THEBOLDFONT.ttf; sourceTree = "<group>"; };
 		46B11BBF28CB9D2F00EAC8B9 /* Solo-Mission-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Solo-Mission-Info.plist"; sourceTree = SOURCE_ROOT; };
 		46DE7E0D28D694F8001BAED9 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 				4612BE6D28C69C4A0016394C /* GameScene.sks */,
 				46DE7E0D28D694F8001BAED9 /* Explosion.sks */,
 				4612BE6F28C69C4A0016394C /* Actions.sks */,
-				46A9E3A128E873DB0071B71C /* Starfield.sks */,
+				46A75FEE28EDD8B6008D5944 /* Starfield.sks */,
 				46ED549628CD16A800527613 /* MainMenuScene.swift */,
 				4612BE7128C69C4A0016394C /* GameScene.swift */,
 				46338BD428CCB93F00188B7B /* GameOverScene.swift */,
@@ -245,7 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46A9E3A228E873DB0071B71C /* Starfield.sks in Resources */,
+				46A75FEF28EDD8B6008D5944 /* Starfield.sks in Resources */,
 				4629FA5628CD4944009A2BC5 /* BackingAudio.mp3 in Resources */,
 				4612BE7728C69C4A0016394C /* Main.storyboard in Resources */,
 				4612BE6E28C69C4A0016394C /* GameScene.sks in Resources */,
