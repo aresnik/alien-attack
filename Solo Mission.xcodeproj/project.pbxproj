@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4612BE6C28C69C4A0016394C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BE6B28C69C4A0016394C /* AppDelegate.swift */; };
+		4612BE6E28C69C4A0016394C /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4612BE6D28C69C4A0016394C /* GameScene.sks */; };
+		4612BE7028C69C4A0016394C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 4612BE6F28C69C4A0016394C /* Actions.sks */; };
+		4612BE7228C69C4A0016394C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BE7128C69C4A0016394C /* GameScene.swift */; };
+		4612BE7428C69C4A0016394C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612BE7328C69C4A0016394C /* GameViewController.swift */; };
+		4612BE7728C69C4A0016394C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4612BE7528C69C4A0016394C /* Main.storyboard */; };
+		4612BE7928C69C4B0016394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4612BE7828C69C4B0016394C /* Assets.xcassets */; };
+		4612BE7C28C69C4B0016394C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4612BE7A28C69C4B0016394C /* LaunchScreen.storyboard */; };
+		4629FA5628CD4944009A2BC5 /* BackingAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4629FA5528CD4944009A2BC5 /* BackingAudio.mp3 */; };
+		4629FA5828CD50CA009A2BC5 /* BulletSoundEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4629FA5728CD50CA009A2BC5 /* BulletSoundEffect.wav */; };
+		4629FA5A28CD53C8009A2BC5 /* ExplosionSoundEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4629FA5928CD53C8009A2BC5 /* ExplosionSoundEffect.wav */; };
+		46338BD528CCB93F00188B7B /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338BD428CCB93F00188B7B /* GameOverScene.swift */; };
+		46338BD728CCC04200188B7B /* Solo MissionTests in Resources */ = {isa = PBXBuildFile; fileRef = 46338BD628CCC04200188B7B /* Solo MissionTests */; };
+		46338BD928CCC05600188B7B /* Solo MissionUITests in Resources */ = {isa = PBXBuildFile; fileRef = 46338BD828CCC05600188B7B /* Solo MissionUITests */; };
+		4656B13128EBBE390061CF3C /* GamePausedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656B13028EBBE390061CF3C /* GamePausedScene.swift */; };
+		46A9E3A228E873DB0071B71C /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46A9E3A128E873DB0071B71C /* Starfield.sks */; };
+		46B11BAD28CB99AB00EAC8B9 /* THEBOLDFONT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46B11BAC28CB99AB00EAC8B9 /* THEBOLDFONT.ttf */; };
+		46DE7E0E28D694F8001BAED9 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46DE7E0D28D694F8001BAED9 /* Explosion.sks */; };
+		46ED549728CD16A800527613 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46ED549628CD16A800527613 /* MainMenuScene.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4612BE8228C69C4B0016394C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4612BE6028C69C4A0016394C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4612BE6728C69C4A0016394C;
+			remoteInfo = "Solo Mission";
+		};
+		4612BE8C28C69C4B0016394C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4612BE6028C69C4A0016394C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4612BE6728C69C4A0016394C;
+			remoteInfo = "Solo Mission";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4612BE6828C69C4A0016394C /* Solo Mission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solo Mission.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4612BE6B28C69C4A0016394C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4612BE6D28C69C4A0016394C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		4612BE6F28C69C4A0016394C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		4612BE7128C69C4A0016394C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		4612BE7328C69C4A0016394C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		4612BE7628C69C4A0016394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4612BE7828C69C4B0016394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4612BE7B28C69C4B0016394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4612BE8128C69C4B0016394C /* Solo MissionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solo MissionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4612BE8B28C69C4B0016394C /* Solo MissionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solo MissionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4629FA5528CD4944009A2BC5 /* BackingAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackingAudio.mp3; sourceTree = "<group>"; };
+		4629FA5728CD50CA009A2BC5 /* BulletSoundEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BulletSoundEffect.wav; sourceTree = "<group>"; };
+		4629FA5928CD53C8009A2BC5 /* ExplosionSoundEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ExplosionSoundEffect.wav; sourceTree = "<group>"; };
+		46338BD428CCB93F00188B7B /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		46338BD628CCC04200188B7B /* Solo MissionTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Solo MissionTests"; sourceTree = "<group>"; };
+		46338BD828CCC05600188B7B /* Solo MissionUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Solo MissionUITests"; sourceTree = "<group>"; };
+		4656B13028EBBE390061CF3C /* GamePausedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePausedScene.swift; sourceTree = "<group>"; };
+		46A9E3A128E873DB0071B71C /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Starfield.sks; path = "../../../SpaceGameReloaded-master/SpacegameReloaded/Starfield.sks"; sourceTree = "<group>"; };
+		46B11BAC28CB99AB00EAC8B9 /* THEBOLDFONT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = THEBOLDFONT.ttf; sourceTree = "<group>"; };
+		46B11BBF28CB9D2F00EAC8B9 /* Solo-Mission-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Solo-Mission-Info.plist"; sourceTree = SOURCE_ROOT; };
+		46DE7E0D28D694F8001BAED9 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		46ED549628CD16A800527613 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4612BE6528C69C4A0016394C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4612BE7E28C69C4B0016394C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4612BE8828C69C4B0016394C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4612BE5F28C69C4A0016394C = {
+			isa = PBXGroup;
+			children = (
+				4612BE6A28C69C4A0016394C /* Solo Mission */,
+				4612BE6928C69C4A0016394C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4612BE6928C69C4A0016394C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4612BE6828C69C4A0016394C /* Solo Mission.app */,
+				4612BE8128C69C4B0016394C /* Solo MissionTests.xctest */,
+				4612BE8B28C69C4B0016394C /* Solo MissionUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4612BE6A28C69C4A0016394C /* Solo Mission */ = {
+			isa = PBXGroup;
+			children = (
+				46B11BBF28CB9D2F00EAC8B9 /* Solo-Mission-Info.plist */,
+				4612BE6B28C69C4A0016394C /* AppDelegate.swift */,
+				4612BE6D28C69C4A0016394C /* GameScene.sks */,
+				46DE7E0D28D694F8001BAED9 /* Explosion.sks */,
+				4612BE6F28C69C4A0016394C /* Actions.sks */,
+				46A9E3A128E873DB0071B71C /* Starfield.sks */,
+				46ED549628CD16A800527613 /* MainMenuScene.swift */,
+				4612BE7128C69C4A0016394C /* GameScene.swift */,
+				46338BD428CCB93F00188B7B /* GameOverScene.swift */,
+				4612BE7328C69C4A0016394C /* GameViewController.swift */,
+				4656B13028EBBE390061CF3C /* GamePausedScene.swift */,
+				46B11BAC28CB99AB00EAC8B9 /* THEBOLDFONT.ttf */,
+				4612BE7528C69C4A0016394C /* Main.storyboard */,
+				4612BE7828C69C4B0016394C /* Assets.xcassets */,
+				4629FA5928CD53C8009A2BC5 /* ExplosionSoundEffect.wav */,
+				4629FA5728CD50CA009A2BC5 /* BulletSoundEffect.wav */,
+				4629FA5528CD4944009A2BC5 /* BackingAudio.mp3 */,
+				4612BE7A28C69C4B0016394C /* LaunchScreen.storyboard */,
+				46338BD628CCC04200188B7B /* Solo MissionTests */,
+				46338BD828CCC05600188B7B /* Solo MissionUITests */,
+			);
+			path = "Solo Mission";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4612BE6728C69C4A0016394C /* Solo Mission */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo Mission" */;
+			buildPhases = (
+				4612BE6428C69C4A0016394C /* Sources */,
+				4612BE6528C69C4A0016394C /* Frameworks */,
+				4612BE6628C69C4A0016394C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Solo Mission";
+			productName = "Solo Mission";
+			productReference = 4612BE6828C69C4A0016394C /* Solo Mission.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4612BE8028C69C4B0016394C /* Solo MissionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4612BE9828C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo MissionTests" */;
+			buildPhases = (
+				4612BE7D28C69C4B0016394C /* Sources */,
+				4612BE7E28C69C4B0016394C /* Frameworks */,
+				4612BE7F28C69C4B0016394C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4612BE8328C69C4B0016394C /* PBXTargetDependency */,
+			);
+			name = "Solo MissionTests";
+			productName = "Solo MissionTests";
+			productReference = 4612BE8128C69C4B0016394C /* Solo MissionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4612BE8A28C69C4B0016394C /* Solo MissionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4612BE9B28C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo MissionUITests" */;
+			buildPhases = (
+				4612BE8728C69C4B0016394C /* Sources */,
+				4612BE8828C69C4B0016394C /* Frameworks */,
+				4612BE8928C69C4B0016394C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4612BE8D28C69C4B0016394C /* PBXTargetDependency */,
+			);
+			name = "Solo MissionUITests";
+			productName = "Solo MissionUITests";
+			productReference = 4612BE8B28C69C4B0016394C /* Solo MissionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4612BE6028C69C4A0016394C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					4612BE6728C69C4A0016394C = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					4612BE8028C69C4B0016394C = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 4612BE6728C69C4A0016394C;
+					};
+					4612BE8A28C69C4B0016394C = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 4612BE6728C69C4A0016394C;
+					};
+				};
+			};
+			buildConfigurationList = 4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Solo Mission" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4612BE5F28C69C4A0016394C;
+			productRefGroup = 4612BE6928C69C4A0016394C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4612BE6728C69C4A0016394C /* Solo Mission */,
+				4612BE8028C69C4B0016394C /* Solo MissionTests */,
+				4612BE8A28C69C4B0016394C /* Solo MissionUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4612BE6628C69C4A0016394C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46A9E3A228E873DB0071B71C /* Starfield.sks in Resources */,
+				4629FA5628CD4944009A2BC5 /* BackingAudio.mp3 in Resources */,
+				4612BE7728C69C4A0016394C /* Main.storyboard in Resources */,
+				4612BE6E28C69C4A0016394C /* GameScene.sks in Resources */,
+				4612BE7928C69C4B0016394C /* Assets.xcassets in Resources */,
+				4629FA5A28CD53C8009A2BC5 /* ExplosionSoundEffect.wav in Resources */,
+				46DE7E0E28D694F8001BAED9 /* Explosion.sks in Resources */,
+				46338BD928CCC05600188B7B /* Solo MissionUITests in Resources */,
+				4612BE7C28C69C4B0016394C /* LaunchScreen.storyboard in Resources */,
+				46B11BAD28CB99AB00EAC8B9 /* THEBOLDFONT.ttf in Resources */,
+				46338BD728CCC04200188B7B /* Solo MissionTests in Resources */,
+				4629FA5828CD50CA009A2BC5 /* BulletSoundEffect.wav in Resources */,
+				4612BE7028C69C4A0016394C /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4612BE7F28C69C4B0016394C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4612BE8928C69C4B0016394C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4612BE6428C69C4A0016394C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46ED549728CD16A800527613 /* MainMenuScene.swift in Sources */,
+				4612BE7228C69C4A0016394C /* GameScene.swift in Sources */,
+				4656B13128EBBE390061CF3C /* GamePausedScene.swift in Sources */,
+				4612BE7428C69C4A0016394C /* GameViewController.swift in Sources */,
+				46338BD528CCB93F00188B7B /* GameOverScene.swift in Sources */,
+				4612BE6C28C69C4A0016394C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4612BE7D28C69C4B0016394C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4612BE8728C69C4B0016394C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4612BE8328C69C4B0016394C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4612BE6728C69C4A0016394C /* Solo Mission */;
+			targetProxy = 4612BE8228C69C4B0016394C /* PBXContainerItemProxy */;
+		};
+		4612BE8D28C69C4B0016394C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4612BE6728C69C4A0016394C /* Solo Mission */;
+			targetProxy = 4612BE8C28C69C4B0016394C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4612BE7528C69C4A0016394C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4612BE7628C69C4A0016394C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4612BE7A28C69C4B0016394C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4612BE7B28C69C4B0016394C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4612BE9328C69C4B0016394C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4612BE9428C69C4B0016394C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4612BE9628C69C4B0016394C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4P87YA35TA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Solo-Mission-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AR-Sostware--LLC.Solo-Mission";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4612BE9728C69C4B0016394C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4P87YA35TA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Solo-Mission-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AR-Sostware--LLC.Solo-Mission";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4612BE9928C69C4B0016394C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4P87YA35TA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AR-Sostware--LLC.Solo-MissionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solo Mission.app/Solo Mission";
+			};
+			name = Debug;
+		};
+		4612BE9A28C69C4B0016394C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4P87YA35TA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AR-Sostware--LLC.Solo-MissionTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solo Mission.app/Solo Mission";
+			};
+			name = Release;
+		};
+		4612BE9C28C69C4B0016394C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4P87YA35TA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AR-Sostware--LLC.Solo-MissionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Solo Mission";
+			};
+			name = Debug;
+		};
+		4612BE9D28C69C4B0016394C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4P87YA35TA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "AR-Sostware--LLC.Solo-MissionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Solo Mission";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Solo Mission" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4612BE9328C69C4B0016394C /* Debug */,
+				4612BE9428C69C4B0016394C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo Mission" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4612BE9628C69C4B0016394C /* Debug */,
+				4612BE9728C69C4B0016394C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4612BE9828C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo MissionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4612BE9928C69C4B0016394C /* Debug */,
+				4612BE9A28C69C4B0016394C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4612BE9B28C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo MissionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4612BE9C28C69C4B0016394C /* Debug */,
+				4612BE9D28C69C4B0016394C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4612BE6028C69C4A0016394C /* Project object */;
+}
