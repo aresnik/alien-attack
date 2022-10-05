@@ -1,22 +1,25 @@
 //
-//  GamePausedScene.swift
-//  Solo Mission
+//  GameOverScene.swift
+//  Space Shooter
 //
-//  Created by Alex Resnik on 10/3/22.
+//  Created by Alex Resnik on 9/10/22.
 //
 
 import Foundation
 import SpriteKit
 
-class GamePauseScene: SKScene {
+class MainMenuScene: SKScene {
     
-    //IMages
+    
+    // Images.
     let background: SKSpriteNode
     
     // Text.
     let gameFont: String
-
-    var resumeGame = SKLabelNode()
+    var gameBy = SKLabelNode()
+    var gameName1 = SKLabelNode()
+    var gameName2 = SKLabelNode()
+    var startGame = SKLabelNode()
     
     
     override init(size: CGSize) {
@@ -43,10 +46,22 @@ class GamePauseScene: SKScene {
         self.addChild(background)
         
         // Set up labels.
-        resumeGame = makeLabel(text: "Resume Game", fontSize: 100,fontColor: SKColor.white,
+        gameBy = makeLabel(text: "Nova Games Studio, LLC", fontSize: 50,fontColor: SKColor.white,
+        position: CGPoint(x: self.size.width*0.5, y: self.size.height*0.78))
+        self.addChild(gameBy)
+        
+        gameName1 = makeLabel(text: "Space Shooter:", fontSize: 80,fontColor: SKColor.white,
+        position: CGPoint(x: self.size.width*0.5, y: self.size.height*0.7))
+        self.addChild(gameName1)
+        
+        gameName2 = makeLabel(text: "Invation of the Killer Tomatoes", fontSize: 80,fontColor: SKColor.white,
+        position: CGPoint(x: self.size.width*0.5, y: self.size.height*0.625))
+        self.addChild(gameName2)
+        
+        startGame = makeLabel(text: "Start Game", fontSize: 150,fontColor: SKColor.white,
         position: CGPoint(x: self.size.width*0.5, y: self.size.height*0.4))
-        resumeGame.name = "resumeButton"
-        self.addChild(resumeGame)
+        startGame.name = "startButton"
+        self.addChild(startGame)
     }
     
     
@@ -56,7 +71,7 @@ class GamePauseScene: SKScene {
             let pointOfTouch = touch.location(in: self)
             let nodeITouched = atPoint(pointOfTouch)
             
-            if nodeITouched.name == "resumeButton" {
+            if nodeITouched.name == "startButton" {
                 let sceneToMoveTo = GameScene(size: size)
                 sceneToMoveTo.scaleMode = self.scaleMode
                 let myTransition = SKTransition.fade(withDuration: 0.5)
@@ -76,6 +91,3 @@ class GamePauseScene: SKScene {
         return labelNode
     }
 }
-
-    
-

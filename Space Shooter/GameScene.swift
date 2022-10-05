@@ -1,6 +1,6 @@
 //
 //  GameScene.swift
-//  Solo Mission
+//  Space Shooter
 //
 //  Created by Alex Resnik on 9/5/22.
 //
@@ -17,16 +17,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var livesNumber:Int
     var levelNumber:Int
     
-    var starfield:SKEmitterNode!
-    var background:SKSpriteNode!
-    var bullet:SKSpriteNode!
-    
-    let pauseLabel:SKLabelNode
-    let tapToStartLabel:SKLabelNode
-    let scoreLabel:SKLabelNode
-    let livesLabel:SKLabelNode
+    var pauseLabel:SKLabelNode
+    var tapToStartLabel:SKLabelNode
+    var scoreLabel:SKLabelNode
+    var livesLabel:SKLabelNode
    
-    let player:SKSpriteNode
+    var player:SKSpriteNode
     
     let bulletSound:SKAction
     let explosionSound:SKAction
@@ -92,20 +88,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameScore = 0
         
         self.physicsWorld.contactDelegate = self
+
         
         for i in 0...1{
-
-        background = SKSpriteNode(imageNamed: "background")
-        background.size = self.size
-        background.anchorPoint = CGPoint(x: 0.5, y: 0)
-        background.position = CGPoint(x: self.size.width/2,
-                                      y: self.size.height*CGFloat(i))
-        background.zPosition = 0
-        background.name = "Background"
-        self.addChild(background)
+        
+            var background = SKSpriteNode(imageNamed: "background")
+            background.size = self.size
+            background.anchorPoint = CGPoint(x: 0.5, y: 0)
+            background.position = CGPoint(x: self.size.width/2, y: self.size.height*CGFloat(i))
+            background.zPosition = 0
+            background.name = "Background"
+            self.addChild(background)
             
         }
         
+        let starfield:SKEmitterNode!
+
         starfield = SKEmitterNode(fileNamed: "Starfield")
         starfield.position = CGPoint(x: 0, y: 1472)
         starfield.advanceSimulationTime(10)
@@ -378,6 +376,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func fireBullet(){
         
         pauseLabel.text = "Pause"
+        
+        let bullet:SKSpriteNode!
         
         bullet = SKSpriteNode(imageNamed: "bullet")
         bullet.name = "Bullet"

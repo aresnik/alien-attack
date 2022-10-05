@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Solo Mission
+//  Space Shooter
 //
 //  Created by Alex Resnik on 9/5/22.
 //

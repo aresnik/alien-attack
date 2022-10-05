@@ -19,8 +19,6 @@
 		4629FA5828CD50CA009A2BC5 /* BulletSoundEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4629FA5728CD50CA009A2BC5 /* BulletSoundEffect.wav */; };
 		4629FA5A28CD53C8009A2BC5 /* ExplosionSoundEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4629FA5928CD53C8009A2BC5 /* ExplosionSoundEffect.wav */; };
 		46338BD528CCB93F00188B7B /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46338BD428CCB93F00188B7B /* GameOverScene.swift */; };
-		46338BD728CCC04200188B7B /* Solo MissionTests in Resources */ = {isa = PBXBuildFile; fileRef = 46338BD628CCC04200188B7B /* Solo MissionTests */; };
-		46338BD928CCC05600188B7B /* Solo MissionUITests in Resources */ = {isa = PBXBuildFile; fileRef = 46338BD828CCC05600188B7B /* Solo MissionUITests */; };
 		4656B13128EBBE390061CF3C /* GamePausedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656B13028EBBE390061CF3C /* GamePausedScene.swift */; };
 		46A75FEF28EDD8B6008D5944 /* Starfield.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46A75FEE28EDD8B6008D5944 /* Starfield.sks */; };
 		46B11BAD28CB99AB00EAC8B9 /* THEBOLDFONT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46B11BAC28CB99AB00EAC8B9 /* THEBOLDFONT.ttf */; };
@@ -46,7 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4612BE6828C69C4A0016394C /* Solo Mission.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solo Mission.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4612BE6828C69C4A0016394C /* Space Shooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Shooter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4612BE6B28C69C4A0016394C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4612BE6D28C69C4A0016394C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		4612BE6F28C69C4A0016394C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -55,18 +53,16 @@
 		4612BE7628C69C4A0016394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4612BE7828C69C4B0016394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4612BE7B28C69C4B0016394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		4612BE8128C69C4B0016394C /* Solo MissionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solo MissionTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4612BE8B28C69C4B0016394C /* Solo MissionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solo MissionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4612BE8128C69C4B0016394C /* Space ShooterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space ShooterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4612BE8B28C69C4B0016394C /* Space ShooterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Space ShooterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4629FA5528CD4944009A2BC5 /* BackingAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackingAudio.mp3; sourceTree = "<group>"; };
 		4629FA5728CD50CA009A2BC5 /* BulletSoundEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BulletSoundEffect.wav; sourceTree = "<group>"; };
 		4629FA5928CD53C8009A2BC5 /* ExplosionSoundEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ExplosionSoundEffect.wav; sourceTree = "<group>"; };
 		46338BD428CCB93F00188B7B /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
-		46338BD628CCC04200188B7B /* Solo MissionTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Solo MissionTests"; sourceTree = "<group>"; };
-		46338BD828CCC05600188B7B /* Solo MissionUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Solo MissionUITests"; sourceTree = "<group>"; };
 		4656B13028EBBE390061CF3C /* GamePausedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePausedScene.swift; sourceTree = "<group>"; };
 		46A75FEE28EDD8B6008D5944 /* Starfield.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Starfield.sks; sourceTree = "<group>"; };
 		46B11BAC28CB99AB00EAC8B9 /* THEBOLDFONT.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = THEBOLDFONT.ttf; sourceTree = "<group>"; };
-		46B11BBF28CB9D2F00EAC8B9 /* Solo-Mission-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Solo-Mission-Info.plist"; sourceTree = SOURCE_ROOT; };
+		46B11BBF28CB9D2F00EAC8B9 /* Solo-Mission-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Solo-Mission-Info.plist"; sourceTree = SOURCE_ROOT; };
 		46DE7E0D28D694F8001BAED9 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		46ED549628CD16A800527613 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +95,7 @@
 		4612BE5F28C69C4A0016394C = {
 			isa = PBXGroup;
 			children = (
-				4612BE6A28C69C4A0016394C /* Solo Mission */,
+				4612BE6A28C69C4A0016394C /* Space Shooter */,
 				4612BE6928C69C4A0016394C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,14 +103,14 @@
 		4612BE6928C69C4A0016394C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4612BE6828C69C4A0016394C /* Solo Mission.app */,
-				4612BE8128C69C4B0016394C /* Solo MissionTests.xctest */,
-				4612BE8B28C69C4B0016394C /* Solo MissionUITests.xctest */,
+				4612BE6828C69C4A0016394C /* Space Shooter.app */,
+				4612BE8128C69C4B0016394C /* Space ShooterTests.xctest */,
+				4612BE8B28C69C4B0016394C /* Space ShooterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4612BE6A28C69C4A0016394C /* Solo Mission */ = {
+		4612BE6A28C69C4A0016394C /* Space Shooter */ = {
 			isa = PBXGroup;
 			children = (
 				46B11BBF28CB9D2F00EAC8B9 /* Solo-Mission-Info.plist */,
@@ -135,18 +131,16 @@
 				4629FA5728CD50CA009A2BC5 /* BulletSoundEffect.wav */,
 				4629FA5528CD4944009A2BC5 /* BackingAudio.mp3 */,
 				4612BE7A28C69C4B0016394C /* LaunchScreen.storyboard */,
-				46338BD628CCC04200188B7B /* Solo MissionTests */,
-				46338BD828CCC05600188B7B /* Solo MissionUITests */,
 			);
-			path = "Solo Mission";
+			path = "Space Shooter";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4612BE6728C69C4A0016394C /* Solo Mission */ = {
+		4612BE6728C69C4A0016394C /* Space Shooter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo Mission" */;
+			buildConfigurationList = 4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Space Shooter" */;
 			buildPhases = (
 				4612BE6428C69C4A0016394C /* Sources */,
 				4612BE6528C69C4A0016394C /* Frameworks */,
@@ -156,14 +150,14 @@
 			);
 			dependencies = (
 			);
-			name = "Solo Mission";
+			name = "Space Shooter";
 			productName = "Solo Mission";
-			productReference = 4612BE6828C69C4A0016394C /* Solo Mission.app */;
+			productReference = 4612BE6828C69C4A0016394C /* Space Shooter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4612BE8028C69C4B0016394C /* Solo MissionTests */ = {
+		4612BE8028C69C4B0016394C /* Space ShooterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4612BE9828C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo MissionTests" */;
+			buildConfigurationList = 4612BE9828C69C4B0016394C /* Build configuration list for PBXNativeTarget "Space ShooterTests" */;
 			buildPhases = (
 				4612BE7D28C69C4B0016394C /* Sources */,
 				4612BE7E28C69C4B0016394C /* Frameworks */,
@@ -174,14 +168,14 @@
 			dependencies = (
 				4612BE8328C69C4B0016394C /* PBXTargetDependency */,
 			);
-			name = "Solo MissionTests";
+			name = "Space ShooterTests";
 			productName = "Solo MissionTests";
-			productReference = 4612BE8128C69C4B0016394C /* Solo MissionTests.xctest */;
+			productReference = 4612BE8128C69C4B0016394C /* Space ShooterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4612BE8A28C69C4B0016394C /* Solo MissionUITests */ = {
+		4612BE8A28C69C4B0016394C /* Space ShooterUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4612BE9B28C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo MissionUITests" */;
+			buildConfigurationList = 4612BE9B28C69C4B0016394C /* Build configuration list for PBXNativeTarget "Space ShooterUITests" */;
 			buildPhases = (
 				4612BE8728C69C4B0016394C /* Sources */,
 				4612BE8828C69C4B0016394C /* Frameworks */,
@@ -192,9 +186,9 @@
 			dependencies = (
 				4612BE8D28C69C4B0016394C /* PBXTargetDependency */,
 			);
-			name = "Solo MissionUITests";
+			name = "Space ShooterUITests";
 			productName = "Solo MissionUITests";
-			productReference = 4612BE8B28C69C4B0016394C /* Solo MissionUITests.xctest */;
+			productReference = 4612BE8B28C69C4B0016394C /* Space ShooterUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +214,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Solo Mission" */;
+			buildConfigurationList = 4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Space Shooter" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -233,9 +227,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4612BE6728C69C4A0016394C /* Solo Mission */,
-				4612BE8028C69C4B0016394C /* Solo MissionTests */,
-				4612BE8A28C69C4B0016394C /* Solo MissionUITests */,
+				4612BE6728C69C4A0016394C /* Space Shooter */,
+				4612BE8028C69C4B0016394C /* Space ShooterTests */,
+				4612BE8A28C69C4B0016394C /* Space ShooterUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -252,10 +246,8 @@
 				4612BE7928C69C4B0016394C /* Assets.xcassets in Resources */,
 				4629FA5A28CD53C8009A2BC5 /* ExplosionSoundEffect.wav in Resources */,
 				46DE7E0E28D694F8001BAED9 /* Explosion.sks in Resources */,
-				46338BD928CCC05600188B7B /* Solo MissionUITests in Resources */,
 				4612BE7C28C69C4B0016394C /* LaunchScreen.storyboard in Resources */,
 				46B11BAD28CB99AB00EAC8B9 /* THEBOLDFONT.ttf in Resources */,
-				46338BD728CCC04200188B7B /* Solo MissionTests in Resources */,
 				4629FA5828CD50CA009A2BC5 /* BulletSoundEffect.wav in Resources */,
 				4612BE7028C69C4A0016394C /* Actions.sks in Resources */,
 			);
@@ -310,12 +302,12 @@
 /* Begin PBXTargetDependency section */
 		4612BE8328C69C4B0016394C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4612BE6728C69C4A0016394C /* Solo Mission */;
+			target = 4612BE6728C69C4A0016394C /* Space Shooter */;
 			targetProxy = 4612BE8228C69C4B0016394C /* PBXContainerItemProxy */;
 		};
 		4612BE8D28C69C4B0016394C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4612BE6728C69C4A0016394C /* Solo Mission */;
+			target = 4612BE6728C69C4A0016394C /* Space Shooter */;
 			targetProxy = 4612BE8C28C69C4B0016394C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -464,7 +456,8 @@
 				DEVELOPMENT_TEAM = 4P87YA35TA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Solo-Mission-Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "Space Shooter";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -495,7 +488,8 @@
 				DEVELOPMENT_TEAM = 4P87YA35TA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Solo-Mission-Info.plist";
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = "Space Shooter";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.arcade-games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -532,7 +526,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solo Mission.app/Solo Mission";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Space Shooter.app/Space Shooter";
 			};
 			name = Debug;
 		};
@@ -552,7 +546,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solo Mission.app/Solo Mission";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Space Shooter.app/Space Shooter";
 			};
 			name = Release;
 		};
@@ -595,7 +589,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Solo Mission" */ = {
+		4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Space Shooter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4612BE9328C69C4B0016394C /* Debug */,
@@ -604,7 +598,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo Mission" */ = {
+		4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Space Shooter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4612BE9628C69C4B0016394C /* Debug */,
@@ -613,7 +607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4612BE9828C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo MissionTests" */ = {
+		4612BE9828C69C4B0016394C /* Build configuration list for PBXNativeTarget "Space ShooterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4612BE9928C69C4B0016394C /* Debug */,
@@ -622,7 +616,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4612BE9B28C69C4B0016394C /* Build configuration list for PBXNativeTarget "Solo MissionUITests" */ = {
+		4612BE9B28C69C4B0016394C /* Build configuration list for PBXNativeTarget "Space ShooterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4612BE9C28C69C4B0016394C /* Debug */,
