@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4612BE6728C69C4A0016394C"
-               BuildableName = "Space Shooter.app"
-               BlueprintName = "Space Shooter"
-               ReferencedContainer = "container:Space Shooter.xcodeproj">
+               BuildableName = "Alien-Attack.app"
+               BlueprintName = "Alien-Attack"
+               ReferencedContainer = "container:Alien-Attack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "4612BE8028C69C4B0016394C"
                BuildableName = "Space ShooterTests.xctest"
                BlueprintName = "Space ShooterTests"
-               ReferencedContainer = "container:Space Shooter.xcodeproj">
+               ReferencedContainer = "container:Alien-Attack.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "4612BE8A28C69C4B0016394C"
                BuildableName = "Space ShooterUITests.xctest"
                BlueprintName = "Space ShooterUITests"
-               ReferencedContainer = "container:Space Shooter.xcodeproj">
+               ReferencedContainer = "container:Alien-Attack.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4612BE6728C69C4A0016394C"
-            BuildableName = "Space Shooter.app"
-            BlueprintName = "Space Shooter"
-            ReferencedContainer = "container:Space Shooter.xcodeproj">
+            BuildableName = "Alien-Attack.app"
+            BlueprintName = "Alien-Attack"
+            ReferencedContainer = "container:Alien-Attack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4612BE6728C69C4A0016394C"
-            BuildableName = "Space Shooter.app"
-            BlueprintName = "Space Shooter"
-            ReferencedContainer = "container:Space Shooter.xcodeproj">
+            BuildableName = "Alien-Attack.app"
+            BlueprintName = "Alien-Attack"
+            ReferencedContainer = "container:Alien-Attack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

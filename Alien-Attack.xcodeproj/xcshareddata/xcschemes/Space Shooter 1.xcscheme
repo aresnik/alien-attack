@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4612BE6728C69C4A0016394C"
-               BuildableName = "Space Shooter.app"
-               BlueprintName = "Space Shooter"
-               ReferencedContainer = "container:Space Shooter.xcodeproj">
+               BuildableName = "Alien-Attack.app"
+               BlueprintName = "Alien-Attack"
+               ReferencedContainer = "container:Alien-Attack.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4612BE6728C69C4A0016394C"
-            BuildableName = "Space Shooter.app"
-            BlueprintName = "Space Shooter"
-            ReferencedContainer = "container:Space Shooter.xcodeproj">
+            BuildableName = "Alien-Attack.app"
+            BlueprintName = "Alien-Attack"
+            ReferencedContainer = "container:Alien-Attack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "4612BE6728C69C4A0016394C"
-            BuildableName = "Space Shooter.app"
-            BlueprintName = "Space Shooter"
-            ReferencedContainer = "container:Space Shooter.xcodeproj">
+            BuildableName = "Alien-Attack.app"
+            BlueprintName = "Alien-Attack"
+            ReferencedContainer = "container:Alien-Attack.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

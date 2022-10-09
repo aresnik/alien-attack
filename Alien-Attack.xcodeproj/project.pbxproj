@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4612BE6828C69C4A0016394C /* Space Shooter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Space Shooter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4612BE6828C69C4A0016394C /* Alien-Attack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alien-Attack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4612BE6B28C69C4A0016394C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4612BE6D28C69C4A0016394C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		4612BE6F28C69C4A0016394C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		4612BE6928C69C4A0016394C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4612BE6828C69C4A0016394C /* Space Shooter.app */,
+				4612BE6828C69C4A0016394C /* Alien-Attack.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4612BE6728C69C4A0016394C /* Space Shooter */ = {
+		4612BE6728C69C4A0016394C /* Alien-Attack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Space Shooter" */;
+			buildConfigurationList = 4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Alien-Attack" */;
 			buildPhases = (
 				4612BE6428C69C4A0016394C /* Sources */,
 				4612BE6528C69C4A0016394C /* Frameworks */,
@@ -116,9 +116,9 @@
 			);
 			dependencies = (
 			);
-			name = "Space Shooter";
+			name = "Alien-Attack";
 			productName = "Solo Mission";
-			productReference = 4612BE6828C69C4A0016394C /* Space Shooter.app */;
+			productReference = 4612BE6828C69C4A0016394C /* Alien-Attack.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -136,7 +136,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Space Shooter" */;
+			buildConfigurationList = 4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Alien-Attack" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -149,7 +149,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4612BE6728C69C4A0016394C /* Space Shooter */,
+				4612BE6728C69C4A0016394C /* Alien-Attack */,
 			);
 		};
 /* End PBXProject section */
@@ -393,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Space Shooter" */ = {
+		4612BE6328C69C4A0016394C /* Build configuration list for PBXProject "Alien-Attack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4612BE9328C69C4B0016394C /* Debug */,
@@ -402,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Space Shooter" */ = {
+		4612BE9528C69C4B0016394C /* Build configuration list for PBXNativeTarget "Alien-Attack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4612BE9628C69C4B0016394C /* Debug */,
