@@ -63,7 +63,7 @@
 		4612BE5F28C69C4A0016394C = {
 			isa = PBXGroup;
 			children = (
-				4612BE6A28C69C4A0016394C /* Space Shooter */,
+				4612BE6A28C69C4A0016394C /* Alien-Attack */,
 				4612BE6928C69C4A0016394C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,7 +76,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4612BE6A28C69C4A0016394C /* Space Shooter */ = {
+		4612BE6A28C69C4A0016394C /* Alien-Attack */ = {
 			isa = PBXGroup;
 			children = (
 				46521C2828EE71A400D2DF46 /* Space-Shooter-Info.plist */,
@@ -98,7 +98,7 @@
 				4629FA5528CD4944009A2BC5 /* BackingAudio.mp3 */,
 				4612BE7A28C69C4B0016394C /* LaunchScreen.storyboard */,
 			);
-			path = "Space Shooter";
+			path = "Alien-Attack";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
