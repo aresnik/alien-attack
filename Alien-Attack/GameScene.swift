@@ -16,11 +16,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var levelNumber: Int
     
     var player: SKSpriteNode
+    var stopButton: SKSpriteNode
+    var pauseButton: SKSpriteNode
     
-    var pauseLabel: SKLabelNode
     var tapToStartLabel: SKLabelNode
     var scoreLabel: SKLabelNode
-    var livesLabel: SKLabelNode
 
     
     enum gameState{
@@ -59,11 +59,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         levelNumber = 0
         
         player = SKSpriteNode(imageNamed: "playerShip")
-        
-        pauseLabel = SKLabelNode(fontNamed: "The Bold Font")
+        stopButton = SKSpriteNode(imageNamed: "stopImage")
+        pauseButton = SKSpriteNode(imageNamed: "pauseImage")
+            
         tapToStartLabel = SKLabelNode(fontNamed: "The Bold Font")
         scoreLabel = SKLabelNode(fontNamed: "The Bold Font")
-        livesLabel = SKLabelNode(fontNamed: "The Bold Font")
         
         super.init(size: size)
         
@@ -92,7 +92,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameScore = 0
         
         self.physicsWorld.contactDelegate = self
-
         
         for i in 0...1{
         
@@ -100,7 +99,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             background.size = self.size
             background.anchorPoint = CGPoint(x: 0.5, y: 0)
-            background.position = CGPoint(x: self.size.width/2, y: self.size.height*CGFloat(i))
+            background.position = CGPoint(x: self.size.width/2,
+                                          y: self.size.height*CGFloat(i))
             background.zPosition = 0
             background.name = "Background"
             
@@ -114,6 +114,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         starfield.position = CGPoint(x: 0, y: 1472)
         starfield.advanceSimulationTime(10)
         starfield.zPosition = 0
+        starfield.name = "Starfield"
         
         self.addChild(starfield)
         
@@ -121,18 +122,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.position = CGPoint(x: self.size.width/2, y: 0 - self.size.height)
         player.zPosition = 2
         player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
-        player.physicsBody!.affectedByGravity = false
-        player.physicsBody!.categoryBitMask = PhysicsCategories.Player
-        player.physicsBody!.collisionBitMask = PhysicsCategories.None
-        player.physicsBody!.contactTestBitMask = PhysicsCategories.Enemy
+        player.physicsBody?.affectedByGravity = false
+        player.physicsBody?.categoryBitMask = PhysicsCategories.Player
+        player.physicsBody?.collisionBitMask = PhysicsCategories.None
+        player.physicsBody?.contactTestBitMask = PhysicsCategories.Enemy
         
         self.addChild(player)
         
-        scoreLabel.text = "Score: 0"
+        scoreLabel.text = "0"
         scoreLabel.fontSize = 70
         scoreLabel.fontColor = SKColor.white
         scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-        scoreLabel.position = CGPoint(x: self.size.width*0.15, y: self.size.height + scoreLabel.frame.size.height)
+        scoreLabel.position = CGPoint(x: self.size.width*0.1, y: self.size.height + scoreLabel.frame.size.height)
         scoreLabel.zPosition = 100
         
         self.addChild(scoreLabel)
@@ -140,19 +141,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let moveOnToScreenAction = SKAction.moveTo(y: self.size.height*0.9, duration: 0.3)
         
         scoreLabel.run(moveOnToScreenAction)
-        livesLabel.run(moveOnToScreenAction)
         
-        
-        livesLabel.text = "Lives: 3"
-        livesLabel.fontSize = 70
-        livesLabel.fontColor = SKColor.white
-        livesLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.right
-        livesLabel.position = CGPoint(x: self.size.width*0.85, y: self.size.height + livesLabel.frame.size.height)
-        livesLabel.zPosition = 100
-        
-        self.addChild(livesLabel)
-        
-        
+        for n in 1 ... 3{
+           
+            addLives(numberOfLives: n)
+            
+        }
+
         tapToStartLabel.text = "Tap To Begin"
         tapToStartLabel.fontSize = 100
         tapToStartLabel.fontColor = SKColor.white
@@ -165,22 +160,54 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let fadInAction = SKAction.fadeIn(withDuration: 0.3)
         
         tapToStartLabel.run(fadInAction)
+
+    }
+    
+    
+    func addLives(numberOfLives: Int) {
+        
+        var space: CGFloat = 0.0
+        
+        if numberOfLives == 2{
+            
+            space = 100
+        }
+        
+        else if numberOfLives == 3{
+           
+           space = 200
+            
+        }
+
+        let lives = SKSpriteNode(imageNamed: "playerShip")
+        
+        lives.name = "Lives\(numberOfLives)"
+        lives.size = CGSize(width: 100, height: 100)
+        lives.zPosition = 100
+        lives.position = CGPoint(x: self.size.width * 0.75 + space, y: self.size.height * 0.9)
+        
+        addChild(lives)
+        
+        let moveOnToScreenAction = SKAction.moveTo(y: self.size.height*0.9, duration: 0.3)
+        
+        lives.run(moveOnToScreenAction)
         
     }
     
+    
+    var lastUpdateTime: TimeInterval = 0
+    var deltaFrameTime: TimeInterval = 0
+    let amountToMovePerSecond: CGFloat = 200.0
     
     override func update(_ currentTime: TimeInterval) {
             
         scene?.isPaused = UserDefaults().bool(forKey: "gamePaused")
         
-        var lastUpdateTime: TimeInterval = 0
-        var deltaFrameTime: TimeInterval = 0
-        let amountToMovePerSecond: CGFloat = 600.0
-        
         if lastUpdateTime == 0 {
             
             lastUpdateTime = currentTime
         }
+        
         else {
             
             deltaFrameTime = currentTime - lastUpdateTime
@@ -202,7 +229,53 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+ 
     
+    func shake(){
+        
+        let moveUpAction = SKAction.moveBy(x: 30, y: 30, duration: 0.05)
+        let moveDownAction = SKAction.moveBy(x: -30, y: -30, duration: 0.05)
+        let shakeSquence = SKAction.sequence([moveUpAction, moveDownAction])
+        let repeatShake = SKAction.repeat(shakeSquence, count: 5)
+        
+        self.enumerateChildNodes(withName: "Enemy"){
+            
+            enemy, repearShake in
+            enemy.run(repeatShake)
+            
+        }
+        
+        self.enumerateChildNodes(withName: "Bullet"){
+            
+            bullet, repearShake in
+            bullet.run(repeatShake)
+            
+        }
+        
+        self.enumerateChildNodes(withName: "Starfield"){
+            
+            starfield, repearShake in
+            starfield.run(repeatShake)
+            
+        }
+        
+        self.enumerateChildNodes(withName: "Explosion"){
+            
+            explosion, repearShake in
+            explosion.run(repeatShake)
+            
+        }
+        
+        self.enumerateChildNodes(withName: "Background"){
+            
+            background, repearShake in
+            background.run(repeatShake)
+            
+        }
+        
+        player.run(repeatShake)
+        
+    }
     
     func startGame(){
         
@@ -226,28 +299,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let spawnBulletForever = SKAction.repeatForever(spawnBulletSequence)
         
         self.run(spawnBulletForever)
+
+        stopButton.name = "Stop"
+        stopButton.size = CGSize(width: 100, height: 100)
+        stopButton.zPosition = 100
+        stopButton.position = CGPoint(x: self.size.width/2 + 70, y: self.size.height*0.9)
         
-        pauseLabel.text = "Pause"
-        pauseLabel.fontSize = 50
-        pauseLabel.fontColor = SKColor.white
-        pauseLabel.zPosition = 100
-        pauseLabel.position = CGPoint(x: self.size.width/2, y: self.size.height*0.9)
+        self.addChild(stopButton)
         
-        self.addChild(pauseLabel)
+        pauseButton.name = "Pause"
+        pauseButton.size = CGSize(width: 100, height: 100)
+        pauseButton.zPosition = 100
+        pauseButton.position = CGPoint(x: self.size.width/2 - 70, y: self.size.height*0.9)
+        
+        self.addChild(pauseButton)
         
     }
     
     
     func loseLife(){
+     
+        self.enumerateChildNodes(withName: "Lives\(livesNumber)"){
+            
+            lives,remove in
+            lives.removeFromParent()
+            
+            let scaleUp = SKAction.scale(to: 1.5, duration: 0.2)
+            let scaleDown = SKAction.scale(to: 1, duration: 0.2)
+            let scaleSequence = SKAction.sequence([scaleUp, scaleDown])
+            
+            lives.run(scaleSequence)
+        }
         
         livesNumber -= 1
-        livesLabel.text = "Lives: \(livesNumber)"
-        
-        let scaleUp = SKAction.scale(to: 1.5, duration: 0.2)
-        let scaleDown = SKAction.scale(to: 1, duration: 0.2)
-        let scaleSequence = SKAction.sequence([scaleUp, scaleDown])
-        
-        livesLabel.run(scaleSequence)
         
         if livesNumber == 0{
             
@@ -260,7 +344,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addScore(){
         
         gameScore += 1
-        scoreLabel.text = "Score: \(gameScore)"
+        scoreLabel.text = String(gameScore)
         
         if gameScore == 10 ||
             gameScore == 25 ||
@@ -309,7 +393,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         sceneToMoveTo.scaleMode = self.scaleMode
         
-        self.view!.presentScene(sceneToMoveTo, transition: myTransition)
+        self.view?.presentScene(sceneToMoveTo, transition: myTransition)
     }
     
     
@@ -335,13 +419,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             //if the player has hit the enemy
             if body1.node != nil {
                 
-            spawnExplosion(spawnPosition: body1.node!.position)
+                spawnExplosion(spawnPosition: body1.node!.position)
                 
             }
             
             if body2.node != nil {
                 
-            spawnExplosion(spawnPosition: body2.node!.position)
+                spawnExplosion(spawnPosition: body2.node!.position)
                 
             }
             
@@ -352,43 +436,55 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        if body1.categoryBitMask == PhysicsCategories.Bullet &&
-            body2.categoryBitMask == PhysicsCategories.Enemy &&
-            (body2.node?.position.y)! < self.size.height{
+        if body2.node != nil {
             
-            //if the bullet has hit the enemy
-            addScore()
-            
-            if body2.node != nil {
+            if body1.categoryBitMask == PhysicsCategories.Bullet &&
+                body2.categoryBitMask == PhysicsCategories.Enemy &&
+                (body2.node?.position.y)! < self.size.height{
                 
-            spawnExplosion(spawnPosition: body2.node!.position)
+                //if the bullet has hit the enemy
+                addScore()
+                
+                spawnExplosion(spawnPosition: body2.node!.position)
+                
+                body1.node?.removeFromParent()
+                body2.node?.removeFromParent()
                 
             }
-            
-            body1.node?.removeFromParent()
-            body2.node?.removeFromParent()
             
         }
         
     }
     
+    
     func spawnExplosion(spawnPosition: CGPoint){
     
-        let explosion = SKEmitterNode(fileNamed: "Explosion")!
+        if SKEmitterNode(fileNamed: "Explosion") != nil{
+            
+            let explosion = SKEmitterNode(fileNamed: "Explosion")!
+                
+            explosion.position = spawnPosition
+            explosion.zPosition = 3
+            explosion.setScale(1)
+            explosion.name = "Explosion"
         
-        explosion.position = spawnPosition
-        explosion.zPosition = 3
-        explosion.setScale(0)
+            self.addChild(explosion)
         
-        self.addChild(explosion)
+            let explosionSound = SKAction.playSoundFileNamed("ExplosionSoundEffect.wav", waitForCompletion: false)
+            let scaleIn = SKAction.scale(to: 2, duration: 1)
+            let fadeOut = SKAction.fadeOut(withDuration: 1)
+            let delete = SKAction.removeFromParent()
+            let exlosionSequence = SKAction.sequence([explosionSound, scaleIn, fadeOut, delete])
+            
+            if gameArea.contains(explosion.position){
+                
+                explosion.run(exlosionSequence)
+                
+            }
+            
+        }
         
-        let explosionSound = SKAction.playSoundFileNamed("ExplosionSoundEffect.wav", waitForCompletion: false)
-        let scaleIn = SKAction.scale(to: 2, duration: 1)
-        let fadeOut = SKAction.fadeOut(withDuration: 1)
-        let delete = SKAction.removeFromParent()
-        let exlosionSequence = SKAction.sequence([explosionSound, scaleIn, fadeOut, delete])
-        
-        explosion.run(exlosionSequence)
+        shake()
         
     }
     
@@ -429,30 +525,31 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func fireBullet(){
         
-        pauseLabel.text = "Pause"
-        
-        let bullet:SKSpriteNode! = SKSpriteNode(imageNamed: "bullet")
+        let bullet = SKSpriteNode(imageNamed: "bullet")
         
         bullet.name = "Bullet"
-        bullet.setScale(1)
-        bullet.position = player.position
+        bullet.setScale(0.5)
+        bullet.position.x = player.position.x
+        bullet.position.y = player.position.y + player.size.height
         bullet.zPosition = 1
         bullet.physicsBody = SKPhysicsBody(rectangleOf: bullet.size)
-        bullet.physicsBody!.affectedByGravity = false
-        bullet.physicsBody!.categoryBitMask = PhysicsCategories.Bullet
-        bullet.physicsBody!.collisionBitMask = PhysicsCategories.None
-        bullet.physicsBody!.contactTestBitMask = PhysicsCategories.Enemy
-        
+        bullet.physicsBody?.affectedByGravity = false
+        bullet.physicsBody?.categoryBitMask = PhysicsCategories.Bullet
+        bullet.physicsBody?.collisionBitMask = PhysicsCategories.None
+        bullet.physicsBody?.contactTestBitMask = PhysicsCategories.Enemy
+            
         self.addChild(bullet)
-        
+            
         let bulletSound = SKAction.playSoundFileNamed("BulletSoundEffect.wav", waitForCompletion: false)
         let moveBullet = SKAction.moveTo(y: self.size.height + bullet.size.height, duration: 1)
         let deleteBullet = SKAction.removeFromParent()
         let bulletSquence = SKAction.sequence([bulletSound, moveBullet, deleteBullet])
-        
+            
         bullet.run(bulletSquence)
+
         
     }
+    
     
     func spawnEnemy(){
         
@@ -469,10 +566,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         enemy.position = startPoint
         enemy.zPosition = 2
         enemy.physicsBody = SKPhysicsBody(rectangleOf: enemy.size)
-        enemy.physicsBody!.affectedByGravity = false
-        enemy.physicsBody!.categoryBitMask = PhysicsCategories.Enemy
-        enemy.physicsBody!.collisionBitMask = PhysicsCategories.None
-        enemy.physicsBody!.contactTestBitMask = PhysicsCategories.Player | PhysicsCategories.Bullet
+        enemy.physicsBody?.affectedByGravity = false
+        enemy.physicsBody?.categoryBitMask = PhysicsCategories.Enemy
+        enemy.physicsBody?.collisionBitMask = PhysicsCategories.None
+        enemy.physicsBody?.contactTestBitMask = PhysicsCategories.Player | PhysicsCategories.Bullet
         
         self.addChild(enemy)
         
@@ -501,12 +598,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             let pointOfTouch = touch.location(in: self)
             
-            if pauseLabel.contains(pointOfTouch){
+            let touchedNode = self.atPoint(pointOfTouch)
+            
+            if touchedNode.name == "Stop"{
+                
+                if currentGameState == gameState.inGame && scene?.isPaused == false{
+                    
+                    runGameOver()
+                    
+                }
+                
+            }
+            
+            if touchedNode.name == "Pause"{
 
                 if currentGameState == gameState.inGame && scene?.isPaused == false{
 
                     scene?.isPaused = true
-                    pauseLabel.text = "Resume"
+                    pauseButton.texture = SKTexture(imageNamed: "playImage")
+                    stopButton.texture = SKTexture(imageNamed: "stopDisabled")
                     UserDefaults().set(true, forKey: "gamePaused")
                     
                 }
@@ -514,7 +624,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 else if currentGameState == gameState.inGame && scene?.isPaused == true{
                     
                     scene?.isPaused = false
-                    pauseLabel.text = "Pause"
+                    pauseButton.texture = SKTexture(imageNamed: "pauseImage")
+                    stopButton.texture = SKTexture(imageNamed: "stopImage")
                     UserDefaults().set(false, forKey: "gamePaused")
                     
                 }
