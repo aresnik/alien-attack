@@ -8,6 +8,7 @@
 import SpriteKit
 import GameplayKit
 
+
 var gameScore = 0
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -21,6 +22,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var tapToStartLabel: SKLabelNode
     var scoreLabel: SKLabelNode
+    
+    var backColor: UIColor
 
     
     enum gameState{
@@ -54,6 +57,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override init(size: CGSize) {
         
         UserDefaults().set(false, forKey: "gamePaused")
+        
+        backColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         
         livesNumber = 3
         levelNumber = 0
@@ -91,6 +96,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         gameScore = 0
         
+        backgroundColor = backColor
+        
         self.physicsWorld.contactDelegate = self
         
         for i in 0...1{
@@ -121,7 +128,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.setScale(1)
         player.position = CGPoint(x: self.size.width/2, y: 0 - self.size.height)
         player.zPosition = 2
-        player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
+        
+        if player.texture != nil {
+            
+            player.physicsBody = SKPhysicsBody(texture: player.texture!, size: player.texture!.size())
+            
+        }
+            
         player.physicsBody?.affectedByGravity = false
         player.physicsBody?.categoryBitMask = PhysicsCategories.Player
         player.physicsBody?.collisionBitMask = PhysicsCategories.None
@@ -197,7 +210,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var lastUpdateTime: TimeInterval = 0
     var deltaFrameTime: TimeInterval = 0
-    let amountToMovePerSecond: CGFloat = 200.0
+    let amountToMovePerSecond: CGFloat = 100.0
     
     override func update(_ currentTime: TimeInterval) {
             
@@ -318,7 +331,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func loseLife(){
-     
+        
         self.enumerateChildNodes(withName: "Lives\(livesNumber)"){
             
             lives,remove in
@@ -332,12 +345,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         livesNumber -= 1
-        
-        if livesNumber == 0{
-            
-            runGameOver()
-            
-        }
+ 
     }
     
     
@@ -399,61 +407,89 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         
-        var body1 = SKPhysicsBody()
-        var body2 = SKPhysicsBody()
+        var player = SKPhysicsBody()
+        var enemy = SKPhysicsBody()
         
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask{
             
-            body1 = contact.bodyA
-            body2 = contact.bodyB
+            player = contact.bodyA
+            enemy = contact.bodyB
         }
+        
         else{
             
-            body1 = contact.bodyB
-            body2 = contact.bodyA
+            player = contact.bodyB
+            enemy = contact.bodyA
         }
         
-        if body1.categoryBitMask == PhysicsCategories.Player &&
-            body2.categoryBitMask == PhysicsCategories.Enemy{
+        if player.categoryBitMask == PhysicsCategories.Player &&
+            enemy.categoryBitMask == PhysicsCategories.Enemy{
             
             //if the player has hit the enemy
-            if body1.node != nil {
+            redFlash()
+            
+            loseLife()
+            
+            if enemy.node != nil {
                 
-                spawnExplosion(spawnPosition: body1.node!.position)
+                spawnExplosion(spawnPosition: enemy.node!.position)
                 
             }
             
-            if body2.node != nil {
+            enemy.node?.removeFromParent()
+                        
+            if livesNumber == 0 {
                 
-                spawnExplosion(spawnPosition: body2.node!.position)
+                if player.node != nil {
+                    
+                    spawnExplosion(spawnPosition: player.node!.position)
+                    
+                }
+                
+                player.node?.removeFromParent()
+                
+                let runOver = SKAction.run { self.runGameOver() }
+                
+                self.run(runOver)
                 
             }
-            
-            body1.node?.removeFromParent()
-            body2.node?.removeFromParent()
-            
-            runGameOver()
             
         }
         
-        if body2.node != nil {
+        if enemy.node != nil {
             
-            if body1.categoryBitMask == PhysicsCategories.Bullet &&
-                body2.categoryBitMask == PhysicsCategories.Enemy &&
-                (body2.node?.position.y)! < self.size.height{
+            if player.categoryBitMask == PhysicsCategories.Bullet &&
+                enemy.categoryBitMask == PhysicsCategories.Enemy &&
+                (enemy.node?.position.y)! < self.size.height - 200 {
                 
                 //if the bullet has hit the enemy
                 addScore()
                 
-                spawnExplosion(spawnPosition: body2.node!.position)
+                spawnExplosion(spawnPosition: enemy.node!.position)
                 
-                body1.node?.removeFromParent()
-                body2.node?.removeFromParent()
+                player.node?.removeFromParent()
+                enemy.node?.removeFromParent()
                 
             }
             
         }
         
+    }
+    
+    func redFlash(){
+        
+        let changeToRed = SKAction.run{
+
+            self.scene?.backgroundColor = UIColor(red: 0.8, green: 0.0, blue: 0.0, alpha: 0.5)
+            
+        }
+
+        let wait = SKAction.wait(forDuration: 0.3)
+        let changeBack = SKAction.run { self.scene?.backgroundColor = self.backColor }
+        let colorSquence = SKAction.sequence([changeToRed, wait, changeBack])
+
+        self.run(colorSquence)
+
     }
     
     
@@ -475,12 +511,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let fadeOut = SKAction.fadeOut(withDuration: 1)
             let delete = SKAction.removeFromParent()
             let exlosionSequence = SKAction.sequence([explosionSound, scaleIn, fadeOut, delete])
-            
-            if gameArea.contains(explosion.position){
                 
-                explosion.run(exlosionSequence)
-                
-            }
+            explosion.run(exlosionSequence)
             
         }
         
@@ -565,7 +597,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         enemy.setScale(0.5)
         enemy.position = startPoint
         enemy.zPosition = 2
-        enemy.physicsBody = SKPhysicsBody(rectangleOf: enemy.size)
+        enemy.physicsBody = SKPhysicsBody(circleOfRadius: enemy.size.width / 2)
         enemy.physicsBody?.affectedByGravity = false
         enemy.physicsBody?.categoryBitMask = PhysicsCategories.Enemy
         enemy.physicsBody?.collisionBitMask = PhysicsCategories.None
@@ -575,8 +607,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let moveEnemy = SKAction.move(to: endPoint, duration: 5)
         let deleteEnemy = SKAction.removeFromParent()
-        let loseALifeAction = SKAction.run(loseLife)
-        let enemySquence = SKAction.sequence([moveEnemy, deleteEnemy, loseALifeAction])
+        let enemySquence = SKAction.sequence([moveEnemy, deleteEnemy])
         
         if currentGameState == gameState.inGame{
             

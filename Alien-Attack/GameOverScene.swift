@@ -12,9 +12,13 @@ import GameplayKit
 class GameOverScene: SKScene {
 
     let restartLabel = SKLabelNode(fontNamed: "The Bold Font")
+    
+    var backColor: UIColor
 
     
     override init(size: CGSize) {
+        
+        backColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
 
         super.init(size: size)
         
@@ -27,6 +31,8 @@ class GameOverScene: SKScene {
     }
     
     override func didMove(to view: SKView) {
+        
+        backgroundColor = backColor
         
         let background = SKSpriteNode(imageNamed: "background")
         
