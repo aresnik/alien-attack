@@ -9,6 +9,7 @@ import Foundation
 import SpriteKit
 import GameplayKit
 
+
 class GameOverScene: SKScene {
 
     let restartLabel = SKLabelNode(fontNamed: "The Bold Font")
@@ -62,26 +63,15 @@ class GameOverScene: SKScene {
         
         self.addChild(scoreLabel)
         
-        let defaults = UserDefaults()
+        let waveLabel = SKLabelNode(fontNamed: "The Bold Font")
         
-        var highScoreNumber = defaults.integer(forKey: "highScoreSaved")
+        waveLabel.text = "Wave: \(waveNumber)"
+        waveLabel.fontSize = 125
+        waveLabel.fontColor = SKColor.white
+        waveLabel.zPosition = 1
+        waveLabel.position = CGPoint(x: self.size.width/2, y: self.size.height*0.45)
         
-        if gameScore > highScoreNumber{
-            
-            highScoreNumber = gameScore
-            defaults.set(highScoreNumber, forKey: "highScoreSaved")
-            
-        }
-            
-        let highScoreLabel = SKLabelNode(fontNamed: "The Bold Font")
-        
-        highScoreLabel.text = "High Score: \(highScoreNumber)"
-        highScoreLabel.fontSize = 125
-        highScoreLabel.fontColor = SKColor.white
-        highScoreLabel.zPosition = 1
-        highScoreLabel.position = CGPoint(x: self.size.width/2, y: self.size.height*0.45)
-        
-        self.addChild(highScoreLabel)
+        self.addChild(waveLabel)
             
         restartLabel.text = "Restart"
         restartLabel.fontSize = 90

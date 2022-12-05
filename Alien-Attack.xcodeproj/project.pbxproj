@@ -15,6 +15,7 @@
 		4612BE7728C69C4A0016394C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4612BE7528C69C4A0016394C /* Main.storyboard */; };
 		4612BE7928C69C4B0016394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4612BE7828C69C4B0016394C /* Assets.xcassets */; };
 		4612BE7C28C69C4B0016394C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4612BE7A28C69C4B0016394C /* LaunchScreen.storyboard */; };
+		46216DD32936E4D500E53D08 /* Wave0XXX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46216DD22936E4D500E53D08 /* Wave0XXX.swift */; };
 		4629FA5628CD4944009A2BC5 /* BackingAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4629FA5528CD4944009A2BC5 /* BackingAudio.mp3 */; };
 		4629FA5828CD50CA009A2BC5 /* BulletSoundEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4629FA5728CD50CA009A2BC5 /* BulletSoundEffect.wav */; };
 		4629FA5A28CD53C8009A2BC5 /* ExplosionSoundEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4629FA5928CD53C8009A2BC5 /* ExplosionSoundEffect.wav */; };
@@ -37,6 +38,7 @@
 		4612BE7628C69C4A0016394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4612BE7828C69C4B0016394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4612BE7B28C69C4B0016394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		46216DD22936E4D500E53D08 /* Wave0XXX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wave0XXX.swift; sourceTree = "<group>"; };
 		4629FA5528CD4944009A2BC5 /* BackingAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BackingAudio.mp3; sourceTree = "<group>"; };
 		4629FA5728CD50CA009A2BC5 /* BulletSoundEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BulletSoundEffect.wav; sourceTree = "<group>"; };
 		4629FA5928CD53C8009A2BC5 /* ExplosionSoundEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ExplosionSoundEffect.wav; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				46338BD428CCB93F00188B7B /* GameOverScene.swift */,
 				4612BE7328C69C4A0016394C /* GameViewController.swift */,
 				4656B13028EBBE390061CF3C /* GamePausedScene.swift */,
+				46216DD42936E83A00E53D08 /* Earth */,
 				46B11BAC28CB99AB00EAC8B9 /* THEBOLDFONT.ttf */,
 				4612BE7528C69C4A0016394C /* Main.storyboard */,
 				4612BE7828C69C4B0016394C /* Assets.xcassets */,
@@ -99,6 +102,14 @@
 				4612BE7A28C69C4B0016394C /* LaunchScreen.storyboard */,
 			);
 			path = "Alien-Attack";
+			sourceTree = "<group>";
+		};
+		46216DD42936E83A00E53D08 /* Earth */ = {
+			isa = PBXGroup;
+			children = (
+				46216DD22936E4D500E53D08 /* Wave0XXX.swift */,
+			);
+			path = Earth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +197,7 @@
 				4656B13128EBBE390061CF3C /* GamePausedScene.swift in Sources */,
 				4612BE7428C69C4A0016394C /* GameViewController.swift in Sources */,
 				46338BD528CCB93F00188B7B /* GameOverScene.swift in Sources */,
+				46216DD32936E4D500E53D08 /* Wave0XXX.swift in Sources */,
 				4612BE6C28C69C4A0016394C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
