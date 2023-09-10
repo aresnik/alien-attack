@@ -2111,7 +2111,7 @@ extension GameScene {
     }
     
     
-    // Compass
+    // Compass Arrow
     func wave0034() {
         
         let enemyPath = UIBezierPath()
@@ -2168,7 +2168,7 @@ extension GameScene {
     }
     
     
-    
+    // Check Mark
     func wave0035() {
         
         let enemyPath = UIBezierPath()
@@ -2222,20 +2222,184 @@ extension GameScene {
     
     // --------- Level 2-3 ------------
     
+    // Rotating Compass Arrow
+    func wave0036() {
+        
+        let enemyPath = UIBezierPath()
+        
+        var rect = CGRect()
+        
+        rect.size.width = 800
+        rect.size.height = 800
+        rect.origin.x = size.width / 2 - 400
+        rect.origin.y = 900
+        
+        enemyPath.move(to: CGPoint(x: 0, y: 0))
+        
+        enemyPath.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        
+        for _ in 1...25 {
+            
+            for _ in 1...2 {
+                
+                enemyPath.addLine(to: CGPoint(x: rect.midX, y: rect.midY + rect.height * 2/8))  // Seg A
+                enemyPath.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))                      // Seg B
+                enemyPath.addLine(to: CGPoint(x: rect.midX, y: rect.minY))                      // Seg C
+                enemyPath.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))                      // Seg D
+
+            }
+            
+            let x = rect.midX
+            let y = rect.midY
+            let transform = CGAffineTransform(translationX: x, y: y).rotated(by: .pi / 2).translatedBy(x: -x, y: -y)
+            
+            enemyPath.apply(transform)
+            
+        }
+        
+        for i in 0...22 {
+            
+            let moveEnemy = SKAction.follow(enemyPath.cgPath, asOffset: false, orientToPath: false, speed: 600)
+            
+            
+            moveEnemy.timingFunction = {
+                
+                time in
+                
+                return min(time - 0.0009 * Float(i), 1)
+                
+            }
+            
+            enemy.append(SKSpriteNode(imageNamed: "enemyShip"))
+
+            enemyPhysics(i: i)
+            
+            addChild(enemy[i])
+            
+            enemy[i].run(moveEnemy)
+            
+        }
+        
+    }
     
-    func wave0036() {}
+    
+    // Marker
+    func wave0037() {
+        
+        let enemyPath = UIBezierPath()
+        
+        var rect = CGRect()
+        
+        rect.size.width = 800
+        rect.size.height = 800
+        rect.origin.x = size.width / 2 - 400
+        rect.origin.y = 900
+        
+        enemyPath.move(to: CGPoint(x: 0, y: 600))
+        
+        enemyPath.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        
+        for _ in 1...50 {
+
+            enemyPath.addLine(to: CGPoint(x: rect.midX, y: rect.midY + rect.height * 2/8)) // Seg A
+            enemyPath.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))                     // Seg B
+            enemyPath.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + rect.height * 2/8)) // Seg C
+            enemyPath.addLine(to: CGPoint(x: rect.midX, y: rect.minY))                     // Seg D
+            enemyPath.addLine(to: CGPoint(x: rect.minX, y: rect.minY + rect.height * 2/8)) // Seg E
+            enemyPath.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))                     // Seg F
+        }
+        
+        for i in 0...22 {
+            
+            let moveEnemy = SKAction.follow(enemyPath.cgPath, asOffset: false, orientToPath: false, speed: 600)
+            
+            
+            moveEnemy.timingFunction = {
+                
+                time in
+                
+                return min(time - 0.0009 * Float(i), 1)
+                
+            }
+            
+            enemy.append(SKSpriteNode(imageNamed: "enemyShip"))
+
+            enemyPhysics(i: i)
+            
+            addChild(enemy[i])
+            
+            enemy[i].run(moveEnemy)
+            
+        }
+        
+    }
+    
+    
+    // Square with Curved Sides
+    func wave0038() {
+        
+        let enemyPath = UIBezierPath()
+        
+        var rect = CGRect()
+        
+        rect.size.width = 800
+        rect.size.height = 800
+        rect.origin.x = size.width / 2 - 400
+        rect.origin.y = 900
+        
+        let pathToA = CGPoint(x: rect.maxX, y: rect.maxY)
+        let pathCnA = CGPoint(x: rect.midX, y: rect.midY)
+        let pathToB = CGPoint(x: rect.maxX, y: rect.minY)
+        let pathCnB = CGPoint(x: rect.midX, y: rect.midY)
+        let pathToC = CGPoint(x: rect.minX, y: rect.minY)
+        let pathCnC = CGPoint(x: rect.midX, y: rect.midY)
+        let pathToD = CGPoint(x: rect.minX, y: rect.maxY)
+        let pathCnD = CGPoint(x: rect.midX, y: rect.midY)
+        
+        enemyPath.move(to: CGPoint(x: 0, y: 600))
+        
+        enemyPath.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
+        
+        for _ in 1...50 {
+
+            enemyPath.addQuadCurve(to: pathToA, controlPoint: pathCnA)
+            enemyPath.addQuadCurve(to: pathToB, controlPoint: pathCnB)
+            enemyPath.addQuadCurve(to: pathToC, controlPoint: pathCnC)
+            enemyPath.addQuadCurve(to: pathToD, controlPoint: pathCnD)
+        }
+        
+        for i in 0...22 {
+            
+            let moveEnemy = SKAction.follow(enemyPath.cgPath, asOffset: false, orientToPath: false, speed: 600)
+            
+            
+            moveEnemy.timingFunction = {
+                
+                time in
+                
+                return min(time - 0.0009 * Float(i), 1)
+                
+            }
+            
+            enemy.append(SKSpriteNode(imageNamed: "enemyShip"))
+
+            enemyPhysics(i: i)
+            
+            addChild(enemy[i])
+            
+            enemy[i].run(moveEnemy)
+            
+        }
+        
+    }
     
     
     
-    func wave0037() {}
-    
-    
-    
-    func wave0038() {}
-    
-    
-    
-    func wave0039() {}
+    func wave0039() {
+        
+        
+        
+    }
     
     
     

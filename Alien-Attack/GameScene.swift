@@ -11,7 +11,7 @@ import SwiftUI
 
 
 var gameScore = 0
-var waveNumber = 35
+var waveNumber = 1
 
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
@@ -172,6 +172,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         player.physicsBody?.affectedByGravity = false
         player.physicsBody?.categoryBitMask = PhysicsCategories.Player
+        
         player.physicsBody?.collisionBitMask = PhysicsCategories.None
         player.physicsBody?.contactTestBitMask = PhysicsCategories.Enemy
         
@@ -486,6 +487,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
+        waveNumber = Int.random(in: 1...38)
+        
         var waveName: ( () -> Void ) = wave0001
         
         switch waveNumber {
@@ -671,7 +674,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             case 0125: waveName = wave0125
 
 
-        default: waveName = wave0035
+        default: waveName = wave0001
             
             
             print("Cannot find level info")
@@ -844,11 +847,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
             self.addChild(explosion)
         
-            let explosionSound = SKAction.playSoundFileNamed("ExplosionSoundEffect.wav", waitForCompletion: false)
+//            SoundFileNamed("ExplosionSoundEffect.wav", waitForCompletion: false)
             let scaleIn = SKAction.scale(to: 2, duration: 1)
             let fadeOut = SKAction.fadeOut(withDuration: 1)
             let delete = SKAction.removeFromParent()
-            let exlosionSequence = SKAction.sequence([explosionSound, scaleIn, fadeOut, delete])
+            let exlosionSequence = SKAction.sequence([scaleIn, fadeOut, delete])
                 
             explosion.run(exlosionSequence)
             
